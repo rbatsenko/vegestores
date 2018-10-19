@@ -23,7 +23,6 @@
   to { transform: rotate(360deg); }
 }
 
-#map {
-  width: 100%;
-  height: calc(100vh - 64px);
+#google-map {
+  position: relative;
 }
