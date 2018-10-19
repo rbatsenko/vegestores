@@ -1,0 +1,16 @@
+{
+  "short_name": "Warzywniak",
+  "name": "Warzywniak",
+  "description": "Znajdź warzywniak w pobliżu",
+  "icons": [
+    {
+      "src": "carrot.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#77b255",
+  "background_color": "#ffffff"
+}
