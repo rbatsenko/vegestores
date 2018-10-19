@@ -38,7 +38,11 @@ class MapWithLocation extends Component {
     const { google } = this.props;
 
     if (loading) {
-      return null;
+      return (
+        <div className="loading-map">
+          <h1>Please allow or block location service :)</h1>
+        </div>
+      )
     }
 
     return (
