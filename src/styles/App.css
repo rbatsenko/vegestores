@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700');
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 2s; /* Firefox < 16 */
   -ms-animation: fadein 2s; /* Internet Explorer */
@@ -40,6 +43,18 @@ body {
   to   { opacity: 1; }
 }
 
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.App-logo-link {
+  float: left;
+  padding: 10px 15px;
+  border-right: 1px solid #eee;
+}
+
 .App-logo {
   height: 40px;
 }
@@ -47,19 +62,40 @@ body {
 .App-header {
   text-align: center;
   background-color: #fff;
-  padding: 10px 0;
   color: white;
   position: relative;
   z-index: 10;
   box-shadow: 0px -60px 70px 30px black;
 }
 
-.App-title {
-  font-size: 1.5em;
+.App-search {
+  display: inline-block;
+  margin: 10px 0;
 }
 
-.App-intro {
-  font-size: large;
+.App-search h1 {
+  display: inline-block;
+  margin: 0;
+  margin-right: 10px;
+  vertical-align: middle;
+  color: black;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: .05em;
+}
+
+.App-search > div {
+  display: inline-block;
+}
+
+.App-search-field {
+  padding: 13px 60px 13px 15px;
+  border-radius: 40px;
+  border: 1px solid #bbb;
+}
+
+.App-search-field:focus {
+  outline: none;
 }
 
 #google-map {
