@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from '../logo.svg';
 import '../styles/App.css';
 import MapWithLocation from './Map';
+import LocationSearchInput from './LocationSearchInput';
 
 class App extends Component {
 
@@ -12,7 +13,7 @@ class App extends Component {
           <a className="App-logo-link" href="/"><img src={logo} className="App-logo" alt="Warzywniak - Info" /></a>
           <div className="App-search">
             <h1>Znajdź warzywniak</h1>
-            <input className="App-search-field" id="search" name="search" placeholder="Wpisz adres..." />
+            <LocationSearchInput />
           </div>
         </header>
         <main>
