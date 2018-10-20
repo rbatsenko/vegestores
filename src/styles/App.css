@@ -113,3 +113,25 @@ body {
   font-size: 22px;
   font-weight: 300;
 }
+
+@media (max-width: 1023px) {
+  .App-search h1 {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 590px) {
+  .App-search h1 {
+    display: none;
+  }
+
+  .App-search {
+    float: left;
+    margin: 11px 15px;
+  }
+
+  .App-search-field {
+    padding: 13px 0;
+    border: none;
+  }
+}
