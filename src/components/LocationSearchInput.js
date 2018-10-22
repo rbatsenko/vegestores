@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
+import PlacesAutocomplete/*, { geocodeByAddress, getLatLng }*/ from 'react-places-autocomplete';
 import { GoogleApiWrapper } from 'google-maps-react';
 
 class LocationSearchInput extends Component {
@@ -25,10 +25,20 @@ class LocationSearchInput extends Component {
   }
 
   handleSelect = address => {
-    geocodeByAddress(address)
+    this.setState({
+      address: address
+    });
+    /*geocodeByAddress(address)
       .then(results => getLatLng(results[0]))
-      .then(latLng => console.log('Success', latLng))
-      .catch(error => console.error('Error', error));
+      .then(
+        latLng => {
+          console.log('Success', latLng); 
+          this.setState({
+            address: address
+          });
+        }
+      )
+      .catch(error => console.error('Error', error));*/
   };
 
   render() {
