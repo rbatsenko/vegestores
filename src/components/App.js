@@ -3,13 +3,6 @@ import logo from '../logo.svg';
 import '../styles/App.css';
 import MapWithLocation from './Map';
 import LocationSearchInput from './LocationSearchInput';
-import { createStore } from 'redux';
-
-const store = createStore((state = { count: 0 }) => {
-  return state;
-});
-
-console.log(store.getState());
 
 class App extends Component {
 
