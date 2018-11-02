@@ -193,17 +193,18 @@ class MapWithLocation extends Component {
           google={google}
           zoom={this.props.address.zoom ? this.props.address.zoom : this.state.zoom}
           style={this.mapStyles}
-          center={this.props.address.latLng}
+          //center={this.props.address.latLng}
           initialCenter={userLocation}
           styles={snazzyMapsStyles}
+          //bounds={this.bounds}>
         >
           <Marker
             title={'Your position'}
             name={'Your position'}
             position={userLocation}
-            /*icon={{
-              url: '/user-dot.png',
-            }}*/
+            icon={{
+              url: '/user-pin.png',
+            }}
           />
         </Map>
       </div>
