@@ -2,8 +2,10 @@ const addressReducer = (state, action) => {
   switch(action.type) {
     case 'GET_USER_ADDRESS':
       return {
-        address: action.address
-      }
+        address: action.address,
+        latLng: action.latLng,
+        zoom: 15
+      };
     default:
       return state;
   }

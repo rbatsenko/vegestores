@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+import { connect } from 'react-redux';
+import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 
 class MapWithLocation extends Component {
   state = {
@@ -190,16 +191,34 @@ class MapWithLocation extends Component {
       <div id="google-map">
         <Map
           google={google}
-          zoom={this.state.zoom}
+          zoom={this.props.address.zoom ? this.props.address.zoom : this.state.zoom}
           style={this.mapStyles}
+          center={this.props.address.latLng}
           initialCenter={userLocation}
           styles={snazzyMapsStyles}
-        />
+        >
+          <Marker
+            title={'Your position'}
+            name={'Your position'}
+            position={userLocation}
+            /*icon={{
+              url: '/user-dot.png',
+            }}*/
+          />
+        </Map>
       </div>
     );
   }
 }
 
-export default GoogleApiWrapper({
+const mapStateToProps = (state) => {
+  return {
+    address: state.address
+  }
+};
+
+const MapWithLocationGoogleAPI = GoogleApiWrapper({
   apiKey: 'AIzaSyBlVCXYggvwxrrHWeEqePL1FN5oCiJ8czw'
 })(MapWithLocation);
+
+export default connect(mapStateToProps)(MapWithLocationGoogleAPI);

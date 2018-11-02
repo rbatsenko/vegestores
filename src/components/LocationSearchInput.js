@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PlacesAutocomplete, { geocodeByAddress, /*getLatLng*/ } from 'react-places-autocomplete';
+import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 import { GoogleApiWrapper } from 'google-maps-react';
 import { getUserAddress } from '../actions';
 
@@ -27,20 +27,17 @@ class LocationSearchInput extends Component {
   }
 
   handleSelect = address => {
-    /*this.setState({
-      address: address
-    });*/
     geocodeByAddress(address)
-      .then(results => { 
-        //getLatLng(results[0]); 
-        this.setState({ address: results[0].formatted_address }); 
+      .then(results => {
+        const formattedAddress = results[0].formatted_address;
+        getLatLng(results[0])
+        .then(latLng => {
+          //console.log('Success', latLng);
+          this.setState({ address: formattedAddress });
+          this.props.onSelect(formattedAddress, latLng);
+        })
+        .catch(error => console.error('Error', error));
       })
-      /*.then(
-        latLng => {
-          console.log('Success', latLng); 
-          console.log(this.state);
-        }
-      )*/
       .catch(error => console.error('Error', error));
   };
 
@@ -92,7 +89,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onSelect: address => dispatch(getUserAddress({ address: address }))
+    onSelect: (address, latLng) => dispatch(getUserAddress({ address, latLng }))
   };
 };
 
