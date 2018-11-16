@@ -17,7 +17,7 @@ class MapWithLocation extends Component {
     height: 'calc(100vh - 64px)'
   }
 
-  componentDidMount(props) {
+  componentDidMount() {
     navigator.geolocation.getCurrentPosition(
       position => {
         const { latitude, longitude } = position.coords;
@@ -191,12 +191,11 @@ class MapWithLocation extends Component {
       <div id="google-map">
         <Map
           google={google}
-          zoom={this.props.address.zoom ? this.props.address.zoom : this.state.zoom}
+          zoom={typeof this.props.address.zoom !== undefined ? this.props.address.zoom : this.state.zoom}
           style={this.mapStyles}
-          //center={this.props.address.latLng}
+          center={this.props.address.latLng}
           initialCenter={userLocation}
           styles={snazzyMapsStyles}
-          //bounds={this.bounds}>
         >
           <Marker
             title={'Your position'}

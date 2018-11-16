@@ -4,7 +4,7 @@ const addressReducer = (state, action) => {
       return {
         address: action.address,
         latLng: action.latLng,
-        zoom: 15
+        zoom: 13
       };
     default:
       return state;

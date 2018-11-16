@@ -32,7 +32,6 @@ class LocationSearchInput extends Component {
         const formattedAddress = results[0].formatted_address;
         getLatLng(results[0])
         .then(latLng => {
-          //console.log('Success', latLng);
           this.setState({ address: formattedAddress });
           this.props.onSelect(formattedAddress, latLng);
         })
