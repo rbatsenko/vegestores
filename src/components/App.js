@@ -12,7 +12,7 @@ class App extends Component {
         <header className="App-header clearfix">
           <a className="App-logo-link" href="/"><img src={logo} className="App-logo" alt="Warzywniak - Info" /></a>
           <div className="App-search">
-            <h1>Znajdź warzywniak</h1>
+            <h1>Search store</h1>
             <LocationSearchInput />
           </div>
         </header>

@@ -51,7 +51,7 @@ class LocationSearchInput extends Component {
           <div>
             <input
               {...getInputProps({
-                placeholder: 'Wpisz adres...',
+                placeholder: 'Type address...',
                 className: 'App-search-field',
               })}
               onBlur={this.handleBlur}
