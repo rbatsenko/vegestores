@@ -202,7 +202,9 @@ class MapWithLocation extends Component {
             name={ 'Your position' }
             position={ userLocation }
             icon={{
-              url: '/user-pin.png',
+              url: '/user-pin.svg',
+              anchor: new google.maps.Point(32,64),
+              scaledSize: new google.maps.Size(64,64)
             }}
           />
         </Map>
