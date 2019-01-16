@@ -1,1 +1,1 @@
-## Vagetables stores map application
+## Vegetables stores map application
