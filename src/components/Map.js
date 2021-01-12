@@ -220,7 +220,7 @@ const mapStateToProps = (state) => {
 };
 
 const MapWithLocationGoogleAPI = GoogleApiWrapper({
-  apiKey: 'AIzaSyBlVCXYggvwxrrHWeEqePL1FN5oCiJ8czw'
+  apiKey: process.env.GOOGLE_MAPS_API_KEY
 })(MapWithLocation);
 
 export default connect(mapStateToProps)(MapWithLocationGoogleAPI);
